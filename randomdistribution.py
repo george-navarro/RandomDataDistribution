@@ -49,8 +49,8 @@ print('mean: ', np.mean(a))
 # calculate the standard deviation from the mean
 print('std. deviation', np.std(a))
 
-# comparison to using the statistic library
+# comparison to using the statistic library.
 print('===========================')
 print("statistics lib: Standard Deviation of the sample is % s "% (statistics.stdev(a)))
 print("Mean of the sample is % s " % (statistics.mean(a)))
-
+print('===========================')
