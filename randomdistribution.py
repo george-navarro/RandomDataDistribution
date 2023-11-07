@@ -4,7 +4,11 @@ import numpy as np
 from numpy import random
 from collections import Counter
 import statistics
+import logging
 
+
+logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -49,8 +53,16 @@ print('mean: ', np.mean(a))
 # calculate the standard deviation from the mean
 print('std. deviation', np.std(a))
 
-# comparison to using the statistic library.
-print('===========================')
-print("statistics lib: Standard Deviation of the sample is % s "% (statistics.stdev(a)))
-print("Mean of the sample is % s " % (statistics.mean(a)))
-print('===========================')
+
+try:
+    # comparison to using the statistic library.
+    print('===========================')
+    print("statistics lib: Standard Deviation of the sample is % s "% (statistics.stdev(a)))
+    print("Mean of the sample is % s " % (statistics.mean(a)))
+    print('===========================')
+    
+except:
+    logger.log(logging.CRITICAL, "EXCEPTION: statstistics package error.")
+    
+    
+    
